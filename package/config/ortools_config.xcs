@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema oor:name="Settings" oor:package="ortools" xml:ang="en-US" xmlns:oor="http://openoffice.org/2001/registry"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <templates/>
+    <component>
+        <group oor:name="EngineOptions">
+            <prop oor:name="Path" oor:type="xs:string">
+                <info>
+                    <desc>Path to use during ORTools Python import.</desc>
+                </info>
+            </prop>
+            <prop oor:name="CurrentEngine" oor:type="xs:string">
+                <info>
+                    <desc>Name of the currently selected solver engine.</desc>
+                </info>
+            </prop>
+        </group>
+    </component>
+</oor:component-schema>

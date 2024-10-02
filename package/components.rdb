@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<components xmlns="http://openoffice.org/2010/uno-components">
+    <component loader="com.sun.star.loader.Python" uri="src/ortools.py">
+        <implementation name="org.libreoffice.comp.ORToolsLinear_Impl">
+            <service name="com.sun.star.beans.PropertySet"/>
+            <service name="com.sun.star.sheet.Solver"/>
+        </implementation>
+    </component>
+</components>
