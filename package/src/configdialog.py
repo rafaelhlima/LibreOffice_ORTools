@@ -56,20 +56,16 @@ class ActionListener(unohelper.Base, XActionListener):
             sys.path.append(import_path)
         success = False
         try:
-            print("engine = ", engine_name)
             if engine_name == "CPSAT":
-                print("CPSAT")
                 from ortools.sat.python import cp_model
                 model = cp_model.CpModel()
                 success = True
-                print("CPSAT Sucesso")
             else:
                 from ortools.linear_solver import pywraplp
                 model = pywraplp.Solver.CreateSolver(engine_name)
                 success = True
         except:
             pass
-            # traceback.print_exc()
         finally:
             # Remove the path tested
             if import_path != "":
@@ -120,7 +116,6 @@ class ConfigDialog(unohelper.Base):
     def __init__(self):
         self.bas = CreateScriptService("Basic")
         # Get current configuration from the registry
-        print("CRIANDO")
         ctx = uno.getComponentContext()
         smgr = ctx.getServiceManager()
         cp = smgr.createInstance("com.sun.star.configuration.ConfigurationProvider")
@@ -171,7 +166,6 @@ class ConfigDialog(unohelper.Base):
         list_engines = self.create_listbox("List_Engines", (300, 130, 212, 120))
         list_engines.addItems(LIST_ENGINES, 0)
         idx_engine = LIST_ENGINES.index(self.current_engine)
-        print(self.current_engine)
         list_engines.Model.SelectedItems = (idx_engine, )
 
     def create_button(self, btn_name, label, possize, action_cmd):
